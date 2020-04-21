@@ -1,5 +1,5 @@
-![Build](https://github.com/cloud-challenge/codex-catalog/workflows/Build/badge.svg?branch=master)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cloud-challenge_codex-catalog&metric=alert_status)](https://sonarcloud.io/dashboard?id=cloud-challenge_codex-catalog)
+![Build](https://github.com/cloud-challenge/codex-security/workflows/Build/badge.svg?branch=master)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cloud-challenge_codex-security&metric=alert_status)](https://sonarcloud.io/dashboard?id=cloud-challenge_codex-security)
 
 # Spring micro-service for manage security of codex micro-services
 
@@ -13,7 +13,7 @@ Please note that supporting services Config Server must be started before any ot
 
 You can access the following service at given location:
 
-* Catalog Service - http://localhost:8890
+* Security Service - http://localhost:8890
 
 You can tell Config Server to use your local Git repository by using dev Spring profile. Add -Dspring.profiles.active=dev.
 
@@ -36,3 +36,4 @@ This project is inpired by it!
 
 ## Contributing
 The issue tracker is the preferred channel for bug reports, features requests and submitting pull requests.
+
