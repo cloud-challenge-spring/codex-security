@@ -1,9 +1,22 @@
 server.port: 8890
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
 
 ---
 spring:
   profiles: dev
+
+  boot:
+    admin:
+      client:
+        url: http://localhost:8079
 
 eureka:
   client:
