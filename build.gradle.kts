@@ -13,12 +13,21 @@ version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
+	mavenLocal()
+	maven("https://maven.pkg.github.com/cloud-challenge/codex-core"){
+		credentials {
+			username = System.getProperty("maven.username", "")
+			password = System.getProperty("maven.password", "")
+		}
+	}
 	mavenCentral()
 }
 
 extra["springBootAdminVersion"] = "2.2.1"
 
 dependencies {
+	implementation("org.cloudchallenge.codex:codex-core:0.0.1-SNAPSHOT")
+	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
 	implementation("org.springframework.cloud:spring-cloud-starter-config")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
@@ -30,6 +39,10 @@ dependencies {
 		exclude(group = "org.springframework.cloud", module = "spring-cloud-netflix-ribbon")
 		exclude(group = "com.netflix.ribbon", module = "ribbon-eureka")
 	}
+	implementation("io.jsonwebtoken:jjwt-api:0.11.1")
+	implementation("io.jsonwebtoken:jjwt-impl:0.11.1")
+	implementation("io.jsonwebtoken:jjwt-jackson:0.11.1")
+	implementation("org.springframework.boot:spring-boot-configuration-processor")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
